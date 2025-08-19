@@ -10,6 +10,9 @@ services:
     restart: always
     volumes:
       - .:/test
+      - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt:ro
+    environment:
+      - REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
     networks:
       - mattermost-bots-network
 
