@@ -1,0 +1,14 @@
+[project]
+name = "mattermost-test-custom-dialog-bot"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "mm-tools",
+    "mmpy-bot",
+    "requests>=2.32.4",
+]
+
+[tool.uv.sources]
+mm-tools = { git = "https://github.com/Sadisms/mm-tools.git", rev = "feature/custom-dialogs" }
+mmpy-bot = { git = "https://github.com/Sadisms/mmpy_bot.git", rev = "feature/custom-dialogs" }

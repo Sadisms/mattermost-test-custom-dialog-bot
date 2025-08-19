@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  test-bot-dialog:
+    image: test-bot-dialog:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python3 app.py
+    restart: always
+    volumes:
+      - .:/test
+    networks:
+      - mattermost-bots-network
+
+networks:
+  mattermost-bots-network:
+    external: true
