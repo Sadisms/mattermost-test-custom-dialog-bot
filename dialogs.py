@@ -1,5 +1,3 @@
-from urllib.parse import urljoin
-
 from mm_tools.dialogs.custom_dialogs import (
     CustomDialog,
     TextElement
@@ -15,8 +13,8 @@ def create_custom_dialog(
 ) -> dict:
     url = get_webhook_address()
 
-    url_on_update = urljoin(url, callback_on_update)
-    url_on_submit = urljoin(url, callback_on_submit)
+    url_on_update = url.rstrip('/') + f'/{callback_on_update}'
+    url_on_submit = url.rstrip('/') + f'/{callback_on_submit}'
 
     return CustomDialog(
         title="Test custom dialog",

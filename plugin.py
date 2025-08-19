@@ -26,9 +26,9 @@ class TestPlugin(BasePlugin):
 
     @listen_submit_dialog(CALLBACK_ON_SUBMIT)
     async def submit_dialog_handler(self, event: DialogEvent) -> None:
-        print(event.body)
+        self.logger.info(event.body)
 
 
     @listen_update_dialog_ellemnt(CALLBACK_ON_UPDATE)
     async def update_dialog_handler(self, event: DialogEvent) -> None:
-        print(event.body)
+        self.logger.info(event.body)

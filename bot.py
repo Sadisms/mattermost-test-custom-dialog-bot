@@ -1,12 +1,11 @@
 import asyncio
-import logging
 
+from loguru import logger
 from mmpy_bot import Bot, Settings
 from config import config
 from plugin import TestPlugin
 
 
-logger = logging.getLogger(__name__)
 
 bot = Bot(
     settings=Settings(
